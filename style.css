@@ -118,6 +118,7 @@ header{
 
 
 .scientific-panel.open {
+    margin-top: 40px;
     transform: translateX(320px);
     transition: transform 0.3s ease, z-index 5000ms linear;
     z-index: 10; /* devant container */
