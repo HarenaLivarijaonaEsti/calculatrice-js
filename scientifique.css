@@ -1,0 +1,54 @@
+/* panneau scientifique caché derrière le container */
+.scientific-panel {
+    border-radius: 13px;
+    position: absolute;
+    top: 100px;
+    left: 0;
+    width: 30%;
+    height: 50%;
+    background: #ae9dcc;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    padding: 10px;
+    transform: translateX(220px); /* complètement caché à gauche du container */
+    transition: transform 0.3s ease, z-index 0s linear; /* délai pour z-index */
+    z-index: -1; /* bas au départ (derrière container) */
+}
+
+
+.scientific-panel.open {
+    transform: translateX(320px);
+    transition: transform 0.3s ease, z-index 5000ms linear;
+    z-index: 10; /* devant container */
+}
+
+
+#toggle-scientific {
+    position: absolute;
+    top: 190px;
+    left: 100%;
+    transform: translateX(0px); /* position fermée */
+    background-color: #c91313dc;
+    border: none;
+    padding: 20px 1px;
+    border-radius: 0 5px 5px 0;
+    color: white;
+    cursor: pointer;
+    transition: transform 0.3s ease; /* pour l'animation */
+    z-index: 11;
+}
+
+/* bouton déplacé avec panneau */
+.scientific-panel.open + #toggle-scientific {
+    transform: translateX(95px); /* suit l'ouverture */
+}
+
+.sci{
+    padding: 5px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    background-color: #dddbdb;
+    transition: background-color 0.2s, transform 0.2s;
+}
